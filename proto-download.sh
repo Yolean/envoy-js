@@ -2,7 +2,7 @@
 [ -z "$DEBUG" ] || set -x
 set -eo pipefail
 
-ENVOY_TAG=1.27.1
+ENVOY_TAG=1.28.0
 VALIDATE_TAG=1.0.2
 
 cd proto

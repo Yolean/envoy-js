@@ -1,6 +1,7 @@
 /* eslint-disable */
 import * as _m0 from "protobufjs/minimal";
 import { BoolValue, UInt32Value } from "../../../../google/protobuf/wrappers";
+import { TypedExtensionConfig } from "./extension";
 import { SocketOption, SocketOptionsOverride } from "./socket_option";
 
 export const protobufPackage = "envoy.config.core.v3";
@@ -156,7 +157,7 @@ export interface ExtraSourceAddress {
   socket_options: SocketOptionsOverride | undefined;
 }
 
-/** [#next-free-field: 6] */
+/** [#next-free-field: 7] */
 export interface BindConfig {
   /** The address to bind to when creating a socket. */
   source_address:
@@ -180,14 +181,10 @@ export interface BindConfig {
    */
   socket_options: SocketOption[];
   /**
-   * Extra source addresses appended to the address specified in the `source_address`
-   * field. This enables to specify multiple source addresses. Currently, only one extra
-   * address can be supported, and the extra address should have a different IP version
-   * with the address in the `source_address` field. The address which has the same IP
-   * version with the target host's address IP version will be used as bind address. If more
-   * than one extra address specified, only the first address matched IP version will be
-   * returned. If there is no same IP version address found, the address in the `source_address`
-   * will be returned.
+   * Extra source addresses appended to the address specified in the ``source_address``
+   * field. This enables to specify multiple source addresses.
+   * The source address selection is determined by :ref:`local_address_selector
+   * <envoy_v3_api_field_config.core.v3.BindConfig.local_address_selector>`.
    */
   extra_source_addresses: ExtraSourceAddress[];
   /**
@@ -197,6 +194,13 @@ export interface BindConfig {
    * @deprecated
    */
   additional_source_addresses: SocketAddress[];
+  /**
+   * Custom local address selector to override the default (i.e.
+   * :ref:`DefaultLocalAddressSelector
+   * <envoy_v3_api_msg_config.upstream.local_address_selector.v3.DefaultLocalAddressSelector>`).
+   * [#extension-category: envoy.upstream.local_address_selector]
+   */
+  local_address_selector: TypedExtensionConfig | undefined;
 }
 
 /**
@@ -692,6 +696,7 @@ function createBaseBindConfig(): BindConfig {
     socket_options: [],
     extra_source_addresses: [],
     additional_source_addresses: [],
+    local_address_selector: undefined,
   };
 }
 
@@ -711,6 +716,9 @@ export const BindConfig = {
     }
     for (const v of message.additional_source_addresses) {
       SocketAddress.encode(v!, writer.uint32(34).fork()).ldelim();
+    }
+    if (message.local_address_selector !== undefined) {
+      TypedExtensionConfig.encode(message.local_address_selector, writer.uint32(50).fork()).ldelim();
     }
     return writer;
   },
@@ -757,6 +765,13 @@ export const BindConfig = {
 
           message.additional_source_addresses.push(SocketAddress.decode(reader, reader.uint32()));
           continue;
+        case 6:
+          if (tag !== 50) {
+            break;
+          }
+
+          message.local_address_selector = TypedExtensionConfig.decode(reader, reader.uint32());
+          continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -779,6 +794,9 @@ export const BindConfig = {
       additional_source_addresses: globalThis.Array.isArray(object?.additional_source_addresses)
         ? object.additional_source_addresses.map((e: any) => SocketAddress.fromJSON(e))
         : [],
+      local_address_selector: isSet(object.local_address_selector)
+        ? TypedExtensionConfig.fromJSON(object.local_address_selector)
+        : undefined,
     };
   },
 
@@ -799,6 +817,9 @@ export const BindConfig = {
     if (message.additional_source_addresses?.length) {
       obj.additional_source_addresses = message.additional_source_addresses.map((e) => SocketAddress.toJSON(e));
     }
+    if (message.local_address_selector !== undefined) {
+      obj.local_address_selector = TypedExtensionConfig.toJSON(message.local_address_selector);
+    }
     return obj;
   },
 
@@ -815,6 +836,10 @@ export const BindConfig = {
     message.extra_source_addresses = object.extra_source_addresses?.map((e) => ExtraSourceAddress.fromPartial(e)) || [];
     message.additional_source_addresses =
       object.additional_source_addresses?.map((e) => SocketAddress.fromPartial(e)) || [];
+    message.local_address_selector =
+      (object.local_address_selector !== undefined && object.local_address_selector !== null)
+        ? TypedExtensionConfig.fromPartial(object.local_address_selector)
+        : undefined;
     return message;
   },
 };
