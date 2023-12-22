@@ -1,0 +1,23 @@
+{
+  "name": "@yolean/envoy",
+  "version": "1.27.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+
+    "protodownload": "./proto-download.sh",
+    "typegen": "protoc --proto_path=./proto --proto_path=./node_modules/google-proto-files --plugin=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_opt=snakeToCamel=false --ts_proto_out=./types envoy/service/auth/v3/external_auth.proto",
+
+    "refresh": "npm install --ignore-scripts --strict-peer-deps && mkdir -p proto types && npm run protodownload && npm run typegen",
+
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "google-proto-files": "4.0.0",
+    "ts-proto": "1.165.2"
+  },
+  "author": "",
+  "license": "Apache-2.0"
+}
