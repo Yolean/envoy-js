@@ -643,7 +643,7 @@ export interface StringRules {
    */
   max_bytes: number;
   /**
-   * Pattern specifes that this field must match against the specified
+   * Pattern specifies that this field must match against the specified
    * regular expression (RE2 syntax). The included expression should elide
    * any delimiters.
    */
@@ -776,7 +776,7 @@ export interface BytesRules {
    */
   max_len: number;
   /**
-   * Pattern specifes that this field must match against the specified
+   * Pattern specifies that this field must match against the specified
    * regular expression (RE2 syntax). The included expression should elide
    * any delimiters.
    */
@@ -883,12 +883,12 @@ export interface RepeatedRules {
   max_items: number;
   /**
    * Unique specifies that all elements in this field must be unique. This
-   * contraint is only applicable to scalar and enum types (messages are not
+   * constraint is only applicable to scalar and enum types (messages are not
    * supported).
    */
   unique: boolean;
   /**
-   * Items specifies the contraints to be applied to each item in the field.
+   * Items specifies the constraints to be applied to each item in the field.
    * Repeated message fields will still execute validation against each item
    * unless skip is specified here.
    */
@@ -5495,7 +5495,7 @@ export type Exact<P, I extends P> = P extends Builtin ? P
   : P & { [K in keyof P]: Exact<P[K], I[K]> } & { [K in Exclude<keyof I, KeysOfUnion<P>>]: never };
 
 function toTimestamp(date: Date): Timestamp {
-  const seconds = date.getTime() / 1_000;
+  const seconds = Math.trunc(date.getTime() / 1_000);
   const nanos = (date.getTime() % 1_000) * 1_000_000;
   return { seconds, nanos };
 }

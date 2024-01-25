@@ -513,9 +513,12 @@ export interface HeaderValueOption {
 /** Describes the supported actions types for header append action. */
 export enum HeaderValueOption_HeaderAppendAction {
   /**
-   * APPEND_IF_EXISTS_OR_ADD - This action will append the specified value to the existing values if the header
-   * already exists. If the header doesn't exist then this will add the header with
-   * specified key and value.
+   * APPEND_IF_EXISTS_OR_ADD - If the header already exists, this action will result in:
+   *
+   * - Comma-concatenated for predefined inline headers.
+   * - Duplicate header added in the ``HeaderMap`` for other headers.
+   *
+   * If the header doesn't exist then this will add new header with specified key and value.
    */
   APPEND_IF_EXISTS_OR_ADD = 0,
   /**

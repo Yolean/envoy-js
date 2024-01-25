@@ -25,7 +25,7 @@ export const protobufPackage = "envoy.service.auth.v3";
  * - field mask to send
  * - which return values from request_context are copied back
  * - which return values are copied into request_headers]
- * [#next-free-field: 13]
+ * [#next-free-field: 14]
  */
 export interface AttributeContext {
   /**
@@ -57,6 +57,10 @@ export interface AttributeContext {
   context_extensions: { [key: string]: string };
   /** Dynamic metadata associated with the request. */
   metadata_context:
+    | Metadata
+    | undefined;
+  /** Metadata associated with the selected route. */
+  route_metadata_context:
     | Metadata
     | undefined;
   /**
@@ -214,6 +218,7 @@ function createBaseAttributeContext(): AttributeContext {
     request: undefined,
     context_extensions: {},
     metadata_context: undefined,
+    route_metadata_context: undefined,
     tls_session: undefined,
   };
 }
@@ -234,6 +239,9 @@ export const AttributeContext = {
     });
     if (message.metadata_context !== undefined) {
       Metadata.encode(message.metadata_context, writer.uint32(90).fork()).ldelim();
+    }
+    if (message.route_metadata_context !== undefined) {
+      Metadata.encode(message.route_metadata_context, writer.uint32(106).fork()).ldelim();
     }
     if (message.tls_session !== undefined) {
       AttributeContext_TLSSession.encode(message.tls_session, writer.uint32(98).fork()).ldelim();
@@ -286,6 +294,13 @@ export const AttributeContext = {
 
           message.metadata_context = Metadata.decode(reader, reader.uint32());
           continue;
+        case 13:
+          if (tag !== 106) {
+            break;
+          }
+
+          message.route_metadata_context = Metadata.decode(reader, reader.uint32());
+          continue;
         case 12:
           if (tag !== 98) {
             break;
@@ -314,6 +329,9 @@ export const AttributeContext = {
         }, {})
         : {},
       metadata_context: isSet(object.metadata_context) ? Metadata.fromJSON(object.metadata_context) : undefined,
+      route_metadata_context: isSet(object.route_metadata_context)
+        ? Metadata.fromJSON(object.route_metadata_context)
+        : undefined,
       tls_session: isSet(object.tls_session) ? AttributeContext_TLSSession.fromJSON(object.tls_session) : undefined,
     };
   },
@@ -340,6 +358,9 @@ export const AttributeContext = {
     }
     if (message.metadata_context !== undefined) {
       obj.metadata_context = Metadata.toJSON(message.metadata_context);
+    }
+    if (message.route_metadata_context !== undefined) {
+      obj.route_metadata_context = Metadata.toJSON(message.route_metadata_context);
     }
     if (message.tls_session !== undefined) {
       obj.tls_session = AttributeContext_TLSSession.toJSON(message.tls_session);
@@ -373,6 +394,10 @@ export const AttributeContext = {
     message.metadata_context = (object.metadata_context !== undefined && object.metadata_context !== null)
       ? Metadata.fromPartial(object.metadata_context)
       : undefined;
+    message.route_metadata_context =
+      (object.route_metadata_context !== undefined && object.route_metadata_context !== null)
+        ? Metadata.fromPartial(object.route_metadata_context)
+        : undefined;
     message.tls_session = (object.tls_session !== undefined && object.tls_session !== null)
       ? AttributeContext_TLSSession.fromPartial(object.tls_session)
       : undefined;
@@ -1181,7 +1206,7 @@ export type Exact<P, I extends P> = P extends Builtin ? P
   : P & { [K in keyof P]: Exact<P[K], I[K]> } & { [K in Exclude<keyof I, KeysOfUnion<P>>]: never };
 
 function toTimestamp(date: Date): Timestamp {
-  const seconds = date.getTime() / 1_000;
+  const seconds = Math.trunc(date.getTime() / 1_000);
   const nanos = (date.getTime() % 1_000) * 1_000_000;
   return { seconds, nanos };
 }
