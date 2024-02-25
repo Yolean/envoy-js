@@ -1,6 +1,6 @@
 {
   "name": "@yolean/envoy",
-  "version": "1.29.0",
+  "version": "1.29.1",
   "description": "",
   "private": false,
   "type": "module",
@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "google-proto-files": "4.1.0",
-    "ts-proto": "1.167.0"
+    "ts-proto": "1.167.8"
   },
   "author": "",
   "license": "Apache-2.0"
