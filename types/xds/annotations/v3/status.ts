@@ -83,7 +83,7 @@ function createBaseFileStatusAnnotation(): FileStatusAnnotation {
 
 export const FileStatusAnnotation = {
   encode(message: FileStatusAnnotation, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.work_in_progress === true) {
+    if (message.work_in_progress !== false) {
       writer.uint32(8).bool(message.work_in_progress);
     }
     return writer;
@@ -118,7 +118,7 @@ export const FileStatusAnnotation = {
 
   toJSON(message: FileStatusAnnotation): unknown {
     const obj: any = {};
-    if (message.work_in_progress === true) {
+    if (message.work_in_progress !== false) {
       obj.work_in_progress = message.work_in_progress;
     }
     return obj;
@@ -140,7 +140,7 @@ function createBaseMessageStatusAnnotation(): MessageStatusAnnotation {
 
 export const MessageStatusAnnotation = {
   encode(message: MessageStatusAnnotation, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.work_in_progress === true) {
+    if (message.work_in_progress !== false) {
       writer.uint32(8).bool(message.work_in_progress);
     }
     return writer;
@@ -175,7 +175,7 @@ export const MessageStatusAnnotation = {
 
   toJSON(message: MessageStatusAnnotation): unknown {
     const obj: any = {};
-    if (message.work_in_progress === true) {
+    if (message.work_in_progress !== false) {
       obj.work_in_progress = message.work_in_progress;
     }
     return obj;
@@ -197,7 +197,7 @@ function createBaseFieldStatusAnnotation(): FieldStatusAnnotation {
 
 export const FieldStatusAnnotation = {
   encode(message: FieldStatusAnnotation, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.work_in_progress === true) {
+    if (message.work_in_progress !== false) {
       writer.uint32(8).bool(message.work_in_progress);
     }
     return writer;
@@ -232,7 +232,7 @@ export const FieldStatusAnnotation = {
 
   toJSON(message: FieldStatusAnnotation): unknown {
     const obj: any = {};
-    if (message.work_in_progress === true) {
+    if (message.work_in_progress !== false) {
       obj.work_in_progress = message.work_in_progress;
     }
     return obj;
@@ -254,7 +254,7 @@ function createBaseStatusAnnotation(): StatusAnnotation {
 
 export const StatusAnnotation = {
   encode(message: StatusAnnotation, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.work_in_progress === true) {
+    if (message.work_in_progress !== false) {
       writer.uint32(8).bool(message.work_in_progress);
     }
     if (message.package_version_status !== 0) {
@@ -304,7 +304,7 @@ export const StatusAnnotation = {
 
   toJSON(message: StatusAnnotation): unknown {
     const obj: any = {};
-    if (message.work_in_progress === true) {
+    if (message.work_in_progress !== false) {
       obj.work_in_progress = message.work_in_progress;
     }
     if (message.package_version_status !== 0) {

@@ -409,7 +409,7 @@ export const SocketAddress = {
     if (message.resolver_name !== "") {
       writer.uint32(42).string(message.resolver_name);
     }
-    if (message.ipv4_compat === true) {
+    if (message.ipv4_compat !== false) {
       writer.uint32(48).bool(message.ipv4_compat);
     }
     return writer;
@@ -501,7 +501,7 @@ export const SocketAddress = {
     if (message.resolver_name !== "") {
       obj.resolver_name = message.resolver_name;
     }
-    if (message.ipv4_compat === true) {
+    if (message.ipv4_compat !== false) {
       obj.ipv4_compat = message.ipv4_compat;
     }
     return obj;

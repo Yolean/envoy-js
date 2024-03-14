@@ -877,7 +877,7 @@ export const Extension = {
     if (message.version !== undefined) {
       BuildVersion.encode(message.version, writer.uint32(34).fork()).ldelim();
     }
-    if (message.disabled === true) {
+    if (message.disabled !== false) {
       writer.uint32(40).bool(message.disabled);
     }
     for (const v of message.type_urls) {
@@ -971,7 +971,7 @@ export const Extension = {
     if (message.version !== undefined) {
       obj.version = BuildVersion.toJSON(message.version);
     }
-    if (message.disabled === true) {
+    if (message.disabled !== false) {
       obj.disabled = message.disabled;
     }
     if (message.type_urls?.length) {
@@ -2078,7 +2078,7 @@ export const HeaderValueOption = {
     if (message.append_action !== 0) {
       writer.uint32(24).int32(message.append_action);
     }
-    if (message.keep_empty_value === true) {
+    if (message.keep_empty_value !== false) {
       writer.uint32(32).bool(message.keep_empty_value);
     }
     return writer;
@@ -2150,7 +2150,7 @@ export const HeaderValueOption = {
     if (message.append_action !== 0) {
       obj.append_action = headerValueOption_HeaderAppendActionToJSON(message.append_action);
     }
-    if (message.keep_empty_value === true) {
+    if (message.keep_empty_value !== false) {
       obj.keep_empty_value = message.keep_empty_value;
     }
     return obj;

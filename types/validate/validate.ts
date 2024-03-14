@@ -53,7 +53,7 @@ export function knownRegexToJSON(object: KnownRegex): string {
  * field, the correct set should be used to ensure proper validations.
  */
 export interface FieldRules {
-  message:
+  message?:
     | MessageRules
     | undefined;
   /** Scalar Field Types */
@@ -89,29 +89,39 @@ export interface FieldRules {
 /** FloatRules describes the constraints applied to `float` values */
 export interface FloatRules {
   /** Const specifies that this field must be exactly the specified value */
-  const: number;
+  const?:
+    | number
+    | undefined;
   /**
    * Lt specifies that this field must be less than the specified value,
    * exclusive
    */
-  lt: number;
+  lt?:
+    | number
+    | undefined;
   /**
    * Lte specifies that this field must be less than or equal to the
    * specified value, inclusive
    */
-  lte: number;
+  lte?:
+    | number
+    | undefined;
   /**
    * Gt specifies that this field must be greater than the specified value,
    * exclusive. If the value of Gt is larger than a specified Lt or Lte, the
    * range is reversed.
    */
-  gt: number;
+  gt?:
+    | number
+    | undefined;
   /**
    * Gte specifies that this field must be greater than or equal to the
    * specified value, inclusive. If the value of Gte is larger than a
    * specified Lt or Lte, the range is reversed.
    */
-  gte: number;
+  gte?:
+    | number
+    | undefined;
   /**
    * In specifies that this field must be equal to one of the specified
    * values
@@ -126,35 +136,45 @@ export interface FloatRules {
    * IgnoreEmpty specifies that the validation rules of this field should be
    * evaluated only if the field is not empty
    */
-  ignore_empty: boolean;
+  ignore_empty?: boolean | undefined;
 }
 
 /** DoubleRules describes the constraints applied to `double` values */
 export interface DoubleRules {
   /** Const specifies that this field must be exactly the specified value */
-  const: number;
+  const?:
+    | number
+    | undefined;
   /**
    * Lt specifies that this field must be less than the specified value,
    * exclusive
    */
-  lt: number;
+  lt?:
+    | number
+    | undefined;
   /**
    * Lte specifies that this field must be less than or equal to the
    * specified value, inclusive
    */
-  lte: number;
+  lte?:
+    | number
+    | undefined;
   /**
    * Gt specifies that this field must be greater than the specified value,
    * exclusive. If the value of Gt is larger than a specified Lt or Lte, the
    * range is reversed.
    */
-  gt: number;
+  gt?:
+    | number
+    | undefined;
   /**
    * Gte specifies that this field must be greater than or equal to the
    * specified value, inclusive. If the value of Gte is larger than a
    * specified Lt or Lte, the range is reversed.
    */
-  gte: number;
+  gte?:
+    | number
+    | undefined;
   /**
    * In specifies that this field must be equal to one of the specified
    * values
@@ -169,35 +189,45 @@ export interface DoubleRules {
    * IgnoreEmpty specifies that the validation rules of this field should be
    * evaluated only if the field is not empty
    */
-  ignore_empty: boolean;
+  ignore_empty?: boolean | undefined;
 }
 
 /** Int32Rules describes the constraints applied to `int32` values */
 export interface Int32Rules {
   /** Const specifies that this field must be exactly the specified value */
-  const: number;
+  const?:
+    | number
+    | undefined;
   /**
    * Lt specifies that this field must be less than the specified value,
    * exclusive
    */
-  lt: number;
+  lt?:
+    | number
+    | undefined;
   /**
    * Lte specifies that this field must be less than or equal to the
    * specified value, inclusive
    */
-  lte: number;
+  lte?:
+    | number
+    | undefined;
   /**
    * Gt specifies that this field must be greater than the specified value,
    * exclusive. If the value of Gt is larger than a specified Lt or Lte, the
    * range is reversed.
    */
-  gt: number;
+  gt?:
+    | number
+    | undefined;
   /**
    * Gte specifies that this field must be greater than or equal to the
    * specified value, inclusive. If the value of Gte is larger than a
    * specified Lt or Lte, the range is reversed.
    */
-  gte: number;
+  gte?:
+    | number
+    | undefined;
   /**
    * In specifies that this field must be equal to one of the specified
    * values
@@ -212,35 +242,45 @@ export interface Int32Rules {
    * IgnoreEmpty specifies that the validation rules of this field should be
    * evaluated only if the field is not empty
    */
-  ignore_empty: boolean;
+  ignore_empty?: boolean | undefined;
 }
 
 /** Int64Rules describes the constraints applied to `int64` values */
 export interface Int64Rules {
   /** Const specifies that this field must be exactly the specified value */
-  const: number;
+  const?:
+    | number
+    | undefined;
   /**
    * Lt specifies that this field must be less than the specified value,
    * exclusive
    */
-  lt: number;
+  lt?:
+    | number
+    | undefined;
   /**
    * Lte specifies that this field must be less than or equal to the
    * specified value, inclusive
    */
-  lte: number;
+  lte?:
+    | number
+    | undefined;
   /**
    * Gt specifies that this field must be greater than the specified value,
    * exclusive. If the value of Gt is larger than a specified Lt or Lte, the
    * range is reversed.
    */
-  gt: number;
+  gt?:
+    | number
+    | undefined;
   /**
    * Gte specifies that this field must be greater than or equal to the
    * specified value, inclusive. If the value of Gte is larger than a
    * specified Lt or Lte, the range is reversed.
    */
-  gte: number;
+  gte?:
+    | number
+    | undefined;
   /**
    * In specifies that this field must be equal to one of the specified
    * values
@@ -255,35 +295,45 @@ export interface Int64Rules {
    * IgnoreEmpty specifies that the validation rules of this field should be
    * evaluated only if the field is not empty
    */
-  ignore_empty: boolean;
+  ignore_empty?: boolean | undefined;
 }
 
 /** UInt32Rules describes the constraints applied to `uint32` values */
 export interface UInt32Rules {
   /** Const specifies that this field must be exactly the specified value */
-  const: number;
+  const?:
+    | number
+    | undefined;
   /**
    * Lt specifies that this field must be less than the specified value,
    * exclusive
    */
-  lt: number;
+  lt?:
+    | number
+    | undefined;
   /**
    * Lte specifies that this field must be less than or equal to the
    * specified value, inclusive
    */
-  lte: number;
+  lte?:
+    | number
+    | undefined;
   /**
    * Gt specifies that this field must be greater than the specified value,
    * exclusive. If the value of Gt is larger than a specified Lt or Lte, the
    * range is reversed.
    */
-  gt: number;
+  gt?:
+    | number
+    | undefined;
   /**
    * Gte specifies that this field must be greater than or equal to the
    * specified value, inclusive. If the value of Gte is larger than a
    * specified Lt or Lte, the range is reversed.
    */
-  gte: number;
+  gte?:
+    | number
+    | undefined;
   /**
    * In specifies that this field must be equal to one of the specified
    * values
@@ -298,35 +348,45 @@ export interface UInt32Rules {
    * IgnoreEmpty specifies that the validation rules of this field should be
    * evaluated only if the field is not empty
    */
-  ignore_empty: boolean;
+  ignore_empty?: boolean | undefined;
 }
 
 /** UInt64Rules describes the constraints applied to `uint64` values */
 export interface UInt64Rules {
   /** Const specifies that this field must be exactly the specified value */
-  const: number;
+  const?:
+    | number
+    | undefined;
   /**
    * Lt specifies that this field must be less than the specified value,
    * exclusive
    */
-  lt: number;
+  lt?:
+    | number
+    | undefined;
   /**
    * Lte specifies that this field must be less than or equal to the
    * specified value, inclusive
    */
-  lte: number;
+  lte?:
+    | number
+    | undefined;
   /**
    * Gt specifies that this field must be greater than the specified value,
    * exclusive. If the value of Gt is larger than a specified Lt or Lte, the
    * range is reversed.
    */
-  gt: number;
+  gt?:
+    | number
+    | undefined;
   /**
    * Gte specifies that this field must be greater than or equal to the
    * specified value, inclusive. If the value of Gte is larger than a
    * specified Lt or Lte, the range is reversed.
    */
-  gte: number;
+  gte?:
+    | number
+    | undefined;
   /**
    * In specifies that this field must be equal to one of the specified
    * values
@@ -341,35 +401,45 @@ export interface UInt64Rules {
    * IgnoreEmpty specifies that the validation rules of this field should be
    * evaluated only if the field is not empty
    */
-  ignore_empty: boolean;
+  ignore_empty?: boolean | undefined;
 }
 
 /** SInt32Rules describes the constraints applied to `sint32` values */
 export interface SInt32Rules {
   /** Const specifies that this field must be exactly the specified value */
-  const: number;
+  const?:
+    | number
+    | undefined;
   /**
    * Lt specifies that this field must be less than the specified value,
    * exclusive
    */
-  lt: number;
+  lt?:
+    | number
+    | undefined;
   /**
    * Lte specifies that this field must be less than or equal to the
    * specified value, inclusive
    */
-  lte: number;
+  lte?:
+    | number
+    | undefined;
   /**
    * Gt specifies that this field must be greater than the specified value,
    * exclusive. If the value of Gt is larger than a specified Lt or Lte, the
    * range is reversed.
    */
-  gt: number;
+  gt?:
+    | number
+    | undefined;
   /**
    * Gte specifies that this field must be greater than or equal to the
    * specified value, inclusive. If the value of Gte is larger than a
    * specified Lt or Lte, the range is reversed.
    */
-  gte: number;
+  gte?:
+    | number
+    | undefined;
   /**
    * In specifies that this field must be equal to one of the specified
    * values
@@ -384,35 +454,45 @@ export interface SInt32Rules {
    * IgnoreEmpty specifies that the validation rules of this field should be
    * evaluated only if the field is not empty
    */
-  ignore_empty: boolean;
+  ignore_empty?: boolean | undefined;
 }
 
 /** SInt64Rules describes the constraints applied to `sint64` values */
 export interface SInt64Rules {
   /** Const specifies that this field must be exactly the specified value */
-  const: number;
+  const?:
+    | number
+    | undefined;
   /**
    * Lt specifies that this field must be less than the specified value,
    * exclusive
    */
-  lt: number;
+  lt?:
+    | number
+    | undefined;
   /**
    * Lte specifies that this field must be less than or equal to the
    * specified value, inclusive
    */
-  lte: number;
+  lte?:
+    | number
+    | undefined;
   /**
    * Gt specifies that this field must be greater than the specified value,
    * exclusive. If the value of Gt is larger than a specified Lt or Lte, the
    * range is reversed.
    */
-  gt: number;
+  gt?:
+    | number
+    | undefined;
   /**
    * Gte specifies that this field must be greater than or equal to the
    * specified value, inclusive. If the value of Gte is larger than a
    * specified Lt or Lte, the range is reversed.
    */
-  gte: number;
+  gte?:
+    | number
+    | undefined;
   /**
    * In specifies that this field must be equal to one of the specified
    * values
@@ -427,35 +507,45 @@ export interface SInt64Rules {
    * IgnoreEmpty specifies that the validation rules of this field should be
    * evaluated only if the field is not empty
    */
-  ignore_empty: boolean;
+  ignore_empty?: boolean | undefined;
 }
 
 /** Fixed32Rules describes the constraints applied to `fixed32` values */
 export interface Fixed32Rules {
   /** Const specifies that this field must be exactly the specified value */
-  const: number;
+  const?:
+    | number
+    | undefined;
   /**
    * Lt specifies that this field must be less than the specified value,
    * exclusive
    */
-  lt: number;
+  lt?:
+    | number
+    | undefined;
   /**
    * Lte specifies that this field must be less than or equal to the
    * specified value, inclusive
    */
-  lte: number;
+  lte?:
+    | number
+    | undefined;
   /**
    * Gt specifies that this field must be greater than the specified value,
    * exclusive. If the value of Gt is larger than a specified Lt or Lte, the
    * range is reversed.
    */
-  gt: number;
+  gt?:
+    | number
+    | undefined;
   /**
    * Gte specifies that this field must be greater than or equal to the
    * specified value, inclusive. If the value of Gte is larger than a
    * specified Lt or Lte, the range is reversed.
    */
-  gte: number;
+  gte?:
+    | number
+    | undefined;
   /**
    * In specifies that this field must be equal to one of the specified
    * values
@@ -470,35 +560,45 @@ export interface Fixed32Rules {
    * IgnoreEmpty specifies that the validation rules of this field should be
    * evaluated only if the field is not empty
    */
-  ignore_empty: boolean;
+  ignore_empty?: boolean | undefined;
 }
 
 /** Fixed64Rules describes the constraints applied to `fixed64` values */
 export interface Fixed64Rules {
   /** Const specifies that this field must be exactly the specified value */
-  const: number;
+  const?:
+    | number
+    | undefined;
   /**
    * Lt specifies that this field must be less than the specified value,
    * exclusive
    */
-  lt: number;
+  lt?:
+    | number
+    | undefined;
   /**
    * Lte specifies that this field must be less than or equal to the
    * specified value, inclusive
    */
-  lte: number;
+  lte?:
+    | number
+    | undefined;
   /**
    * Gt specifies that this field must be greater than the specified value,
    * exclusive. If the value of Gt is larger than a specified Lt or Lte, the
    * range is reversed.
    */
-  gt: number;
+  gt?:
+    | number
+    | undefined;
   /**
    * Gte specifies that this field must be greater than or equal to the
    * specified value, inclusive. If the value of Gte is larger than a
    * specified Lt or Lte, the range is reversed.
    */
-  gte: number;
+  gte?:
+    | number
+    | undefined;
   /**
    * In specifies that this field must be equal to one of the specified
    * values
@@ -513,35 +613,45 @@ export interface Fixed64Rules {
    * IgnoreEmpty specifies that the validation rules of this field should be
    * evaluated only if the field is not empty
    */
-  ignore_empty: boolean;
+  ignore_empty?: boolean | undefined;
 }
 
 /** SFixed32Rules describes the constraints applied to `sfixed32` values */
 export interface SFixed32Rules {
   /** Const specifies that this field must be exactly the specified value */
-  const: number;
+  const?:
+    | number
+    | undefined;
   /**
    * Lt specifies that this field must be less than the specified value,
    * exclusive
    */
-  lt: number;
+  lt?:
+    | number
+    | undefined;
   /**
    * Lte specifies that this field must be less than or equal to the
    * specified value, inclusive
    */
-  lte: number;
+  lte?:
+    | number
+    | undefined;
   /**
    * Gt specifies that this field must be greater than the specified value,
    * exclusive. If the value of Gt is larger than a specified Lt or Lte, the
    * range is reversed.
    */
-  gt: number;
+  gt?:
+    | number
+    | undefined;
   /**
    * Gte specifies that this field must be greater than or equal to the
    * specified value, inclusive. If the value of Gte is larger than a
    * specified Lt or Lte, the range is reversed.
    */
-  gte: number;
+  gte?:
+    | number
+    | undefined;
   /**
    * In specifies that this field must be equal to one of the specified
    * values
@@ -556,35 +666,45 @@ export interface SFixed32Rules {
    * IgnoreEmpty specifies that the validation rules of this field should be
    * evaluated only if the field is not empty
    */
-  ignore_empty: boolean;
+  ignore_empty?: boolean | undefined;
 }
 
 /** SFixed64Rules describes the constraints applied to `sfixed64` values */
 export interface SFixed64Rules {
   /** Const specifies that this field must be exactly the specified value */
-  const: number;
+  const?:
+    | number
+    | undefined;
   /**
    * Lt specifies that this field must be less than the specified value,
    * exclusive
    */
-  lt: number;
+  lt?:
+    | number
+    | undefined;
   /**
    * Lte specifies that this field must be less than or equal to the
    * specified value, inclusive
    */
-  lte: number;
+  lte?:
+    | number
+    | undefined;
   /**
    * Gt specifies that this field must be greater than the specified value,
    * exclusive. If the value of Gt is larger than a specified Lt or Lte, the
    * range is reversed.
    */
-  gt: number;
+  gt?:
+    | number
+    | undefined;
   /**
    * Gte specifies that this field must be greater than or equal to the
    * specified value, inclusive. If the value of Gte is larger than a
    * specified Lt or Lte, the range is reversed.
    */
-  gte: number;
+  gte?:
+    | number
+    | undefined;
   /**
    * In specifies that this field must be equal to one of the specified
    * values
@@ -599,75 +719,99 @@ export interface SFixed64Rules {
    * IgnoreEmpty specifies that the validation rules of this field should be
    * evaluated only if the field is not empty
    */
-  ignore_empty: boolean;
+  ignore_empty?: boolean | undefined;
 }
 
 /** BoolRules describes the constraints applied to `bool` values */
 export interface BoolRules {
   /** Const specifies that this field must be exactly the specified value */
-  const: boolean;
+  const?: boolean | undefined;
 }
 
 /** StringRules describe the constraints applied to `string` values */
 export interface StringRules {
   /** Const specifies that this field must be exactly the specified value */
-  const: string;
+  const?:
+    | string
+    | undefined;
   /**
    * Len specifies that this field must be the specified number of
    * characters (Unicode code points). Note that the number of
    * characters may differ from the number of bytes in the string.
    */
-  len: number;
+  len?:
+    | number
+    | undefined;
   /**
    * MinLen specifies that this field must be the specified number of
    * characters (Unicode code points) at a minimum. Note that the number of
    * characters may differ from the number of bytes in the string.
    */
-  min_len: number;
+  min_len?:
+    | number
+    | undefined;
   /**
    * MaxLen specifies that this field must be the specified number of
    * characters (Unicode code points) at a maximum. Note that the number of
    * characters may differ from the number of bytes in the string.
    */
-  max_len: number;
+  max_len?:
+    | number
+    | undefined;
   /** LenBytes specifies that this field must be the specified number of bytes */
-  len_bytes: number;
+  len_bytes?:
+    | number
+    | undefined;
   /**
    * MinBytes specifies that this field must be the specified number of bytes
    * at a minimum
    */
-  min_bytes: number;
+  min_bytes?:
+    | number
+    | undefined;
   /**
    * MaxBytes specifies that this field must be the specified number of bytes
    * at a maximum
    */
-  max_bytes: number;
+  max_bytes?:
+    | number
+    | undefined;
   /**
    * Pattern specifies that this field must match against the specified
    * regular expression (RE2 syntax). The included expression should elide
    * any delimiters.
    */
-  pattern: string;
+  pattern?:
+    | string
+    | undefined;
   /**
    * Prefix specifies that this field must have the specified substring at
    * the beginning of the string.
    */
-  prefix: string;
+  prefix?:
+    | string
+    | undefined;
   /**
    * Suffix specifies that this field must have the specified substring at
    * the end of the string.
    */
-  suffix: string;
+  suffix?:
+    | string
+    | undefined;
   /**
    * Contains specifies that this field must have the specified substring
    * anywhere in the string.
    */
-  contains: string;
+  contains?:
+    | string
+    | undefined;
   /**
    * NotContains specifies that this field cannot have the specified substring
    * anywhere in the string.
    */
-  not_contains: string;
+  not_contains?:
+    | string
+    | undefined;
   /**
    * In specifies that this field must be equal to one of the specified
    * values
@@ -751,51 +895,69 @@ export interface StringRules {
    * Setting to false will enable a looser validations that only disallows
    * \r\n\0 characters, which can be used to bypass header matching rules.
    */
-  strict: boolean;
+  strict?:
+    | boolean
+    | undefined;
   /**
    * IgnoreEmpty specifies that the validation rules of this field should be
    * evaluated only if the field is not empty
    */
-  ignore_empty: boolean;
+  ignore_empty?: boolean | undefined;
 }
 
 /** BytesRules describe the constraints applied to `bytes` values */
 export interface BytesRules {
   /** Const specifies that this field must be exactly the specified value */
-  const: Uint8Array;
+  const?:
+    | Uint8Array
+    | undefined;
   /** Len specifies that this field must be the specified number of bytes */
-  len: number;
+  len?:
+    | number
+    | undefined;
   /**
    * MinLen specifies that this field must be the specified number of bytes
    * at a minimum
    */
-  min_len: number;
+  min_len?:
+    | number
+    | undefined;
   /**
    * MaxLen specifies that this field must be the specified number of bytes
    * at a maximum
    */
-  max_len: number;
+  max_len?:
+    | number
+    | undefined;
   /**
    * Pattern specifies that this field must match against the specified
    * regular expression (RE2 syntax). The included expression should elide
    * any delimiters.
    */
-  pattern: string;
+  pattern?:
+    | string
+    | undefined;
   /**
    * Prefix specifies that this field must have the specified bytes at the
    * beginning of the string.
    */
-  prefix: Uint8Array;
+  prefix?:
+    | Uint8Array
+    | undefined;
   /**
    * Suffix specifies that this field must have the specified bytes at the
    * end of the string.
    */
-  suffix: Uint8Array;
+  suffix?:
+    | Uint8Array
+    | undefined;
   /**
    * Contains specifies that this field must have the specified bytes
    * anywhere in the string.
    */
-  contains: Uint8Array;
+  contains?:
+    | Uint8Array
+    | undefined;
   /**
    * In specifies that this field must be equal to one of the specified
    * values
@@ -831,18 +993,22 @@ export interface BytesRules {
    * IgnoreEmpty specifies that the validation rules of this field should be
    * evaluated only if the field is not empty
    */
-  ignore_empty: boolean;
+  ignore_empty?: boolean | undefined;
 }
 
 /** EnumRules describe the constraints applied to enum values */
 export interface EnumRules {
   /** Const specifies that this field must be exactly the specified value */
-  const: number;
+  const?:
+    | number
+    | undefined;
   /**
    * DefinedOnly specifies that this field must be only one of the defined
    * values for this enum, failing on any undefined value.
    */
-  defined_only: boolean;
+  defined_only?:
+    | boolean
+    | undefined;
   /**
    * In specifies that this field must be equal to one of the specified
    * values
@@ -864,9 +1030,11 @@ export interface MessageRules {
    * Skip specifies that the validation rules of this field should not be
    * evaluated
    */
-  skip: boolean;
+  skip?:
+    | boolean
+    | undefined;
   /** Required specifies that this field must be set */
-  required: boolean;
+  required?: boolean | undefined;
 }
 
 /** RepeatedRules describe the constraints applied to `repeated` values */
@@ -875,31 +1043,37 @@ export interface RepeatedRules {
    * MinItems specifies that this field must have the specified number of
    * items at a minimum
    */
-  min_items: number;
+  min_items?:
+    | number
+    | undefined;
   /**
    * MaxItems specifies that this field must have the specified number of
    * items at a maximum
    */
-  max_items: number;
+  max_items?:
+    | number
+    | undefined;
   /**
    * Unique specifies that all elements in this field must be unique. This
    * constraint is only applicable to scalar and enum types (messages are not
    * supported).
    */
-  unique: boolean;
+  unique?:
+    | boolean
+    | undefined;
   /**
    * Items specifies the constraints to be applied to each item in the field.
    * Repeated message fields will still execute validation against each item
    * unless skip is specified here.
    */
-  items:
+  items?:
     | FieldRules
     | undefined;
   /**
    * IgnoreEmpty specifies that the validation rules of this field should be
    * evaluated only if the field is not empty
    */
-  ignore_empty: boolean;
+  ignore_empty?: boolean | undefined;
 }
 
 /** MapRules describe the constraints applied to `map` values */
@@ -908,19 +1082,25 @@ export interface MapRules {
    * MinPairs specifies that this field must have the specified number of
    * KVs at a minimum
    */
-  min_pairs: number;
+  min_pairs?:
+    | number
+    | undefined;
   /**
    * MaxPairs specifies that this field must have the specified number of
    * KVs at a maximum
    */
-  max_pairs: number;
+  max_pairs?:
+    | number
+    | undefined;
   /**
    * NoSparse specifies values in this field cannot be unset. This only
    * applies to map's with message value types.
    */
-  no_sparse: boolean;
+  no_sparse?:
+    | boolean
+    | undefined;
   /** Keys specifies the constraints to be applied to each key in the field. */
-  keys:
+  keys?:
     | FieldRules
     | undefined;
   /**
@@ -928,14 +1108,14 @@ export interface MapRules {
    * in the field. Message values will still have their validations evaluated
    * unless skip is specified here.
    */
-  values:
+  values?:
     | FieldRules
     | undefined;
   /**
    * IgnoreEmpty specifies that the validation rules of this field should be
    * evaluated only if the field is not empty
    */
-  ignore_empty: boolean;
+  ignore_empty?: boolean | undefined;
 }
 
 /**
@@ -944,7 +1124,9 @@ export interface MapRules {
  */
 export interface AnyRules {
   /** Required specifies that this field must be set */
-  required: boolean;
+  required?:
+    | boolean
+    | undefined;
   /**
    * In specifies that this field's `type_url` must be equal to one of the
    * specified values.
@@ -963,37 +1145,39 @@ export interface AnyRules {
  */
 export interface DurationRules {
   /** Required specifies that this field must be set */
-  required: boolean;
+  required?:
+    | boolean
+    | undefined;
   /** Const specifies that this field must be exactly the specified value */
-  const:
+  const?:
     | Duration
     | undefined;
   /**
    * Lt specifies that this field must be less than the specified value,
    * exclusive
    */
-  lt:
+  lt?:
     | Duration
     | undefined;
   /**
    * Lt specifies that this field must be less than the specified value,
    * inclusive
    */
-  lte:
+  lte?:
     | Duration
     | undefined;
   /**
    * Gt specifies that this field must be greater than the specified value,
    * exclusive
    */
-  gt:
+  gt?:
     | Duration
     | undefined;
   /**
    * Gte specifies that this field must be greater than the specified value,
    * inclusive
    */
-  gte:
+  gte?:
     | Duration
     | undefined;
   /**
@@ -1014,55 +1198,61 @@ export interface DurationRules {
  */
 export interface TimestampRules {
   /** Required specifies that this field must be set */
-  required: boolean;
+  required?:
+    | boolean
+    | undefined;
   /** Const specifies that this field must be exactly the specified value */
-  const:
+  const?:
     | Date
     | undefined;
   /**
    * Lt specifies that this field must be less than the specified value,
    * exclusive
    */
-  lt:
+  lt?:
     | Date
     | undefined;
   /**
    * Lte specifies that this field must be less than the specified value,
    * inclusive
    */
-  lte:
+  lte?:
     | Date
     | undefined;
   /**
    * Gt specifies that this field must be greater than the specified value,
    * exclusive
    */
-  gt:
+  gt?:
     | Date
     | undefined;
   /**
    * Gte specifies that this field must be greater than the specified value,
    * inclusive
    */
-  gte:
+  gte?:
     | Date
     | undefined;
   /**
    * LtNow specifies that this must be less than the current time. LtNow
    * can only be used with the Within rule.
    */
-  lt_now: boolean;
+  lt_now?:
+    | boolean
+    | undefined;
   /**
    * GtNow specifies that this must be greater than the current time. GtNow
    * can only be used with the Within rule.
    */
-  gt_now: boolean;
+  gt_now?:
+    | boolean
+    | undefined;
   /**
    * Within specifies that this field must be within this duration of the
    * current time. This constraint can be used alone or with the LtNow and
    * GtNow rules.
    */
-  within: Duration | undefined;
+  within?: Duration | undefined;
 }
 
 function createBaseFieldRules(): FieldRules {
@@ -1504,19 +1694,19 @@ function createBaseFloatRules(): FloatRules {
 
 export const FloatRules = {
   encode(message: FloatRules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       writer.uint32(13).float(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       writer.uint32(21).float(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       writer.uint32(29).float(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       writer.uint32(37).float(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       writer.uint32(45).float(message.gte);
     }
     writer.uint32(50).fork();
@@ -1529,7 +1719,7 @@ export const FloatRules = {
       writer.float(v);
     }
     writer.ldelim();
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       writer.uint32(64).bool(message.ignore_empty);
     }
     return writer;
@@ -1642,19 +1832,19 @@ export const FloatRules = {
 
   toJSON(message: FloatRules): unknown {
     const obj: any = {};
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       obj.const = message.const;
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       obj.lt = message.lt;
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       obj.lte = message.lte;
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       obj.gt = message.gt;
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       obj.gte = message.gte;
     }
     if (message.in?.length) {
@@ -1663,7 +1853,7 @@ export const FloatRules = {
     if (message.not_in?.length) {
       obj.not_in = message.not_in;
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       obj.ignore_empty = message.ignore_empty;
     }
     return obj;
@@ -1692,19 +1882,19 @@ function createBaseDoubleRules(): DoubleRules {
 
 export const DoubleRules = {
   encode(message: DoubleRules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       writer.uint32(9).double(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       writer.uint32(17).double(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       writer.uint32(25).double(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       writer.uint32(33).double(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       writer.uint32(41).double(message.gte);
     }
     writer.uint32(50).fork();
@@ -1717,7 +1907,7 @@ export const DoubleRules = {
       writer.double(v);
     }
     writer.ldelim();
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       writer.uint32(64).bool(message.ignore_empty);
     }
     return writer;
@@ -1830,19 +2020,19 @@ export const DoubleRules = {
 
   toJSON(message: DoubleRules): unknown {
     const obj: any = {};
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       obj.const = message.const;
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       obj.lt = message.lt;
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       obj.lte = message.lte;
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       obj.gt = message.gt;
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       obj.gte = message.gte;
     }
     if (message.in?.length) {
@@ -1851,7 +2041,7 @@ export const DoubleRules = {
     if (message.not_in?.length) {
       obj.not_in = message.not_in;
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       obj.ignore_empty = message.ignore_empty;
     }
     return obj;
@@ -1880,19 +2070,19 @@ function createBaseInt32Rules(): Int32Rules {
 
 export const Int32Rules = {
   encode(message: Int32Rules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       writer.uint32(8).int32(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       writer.uint32(16).int32(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       writer.uint32(24).int32(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       writer.uint32(32).int32(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       writer.uint32(40).int32(message.gte);
     }
     writer.uint32(50).fork();
@@ -1905,7 +2095,7 @@ export const Int32Rules = {
       writer.int32(v);
     }
     writer.ldelim();
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       writer.uint32(64).bool(message.ignore_empty);
     }
     return writer;
@@ -2018,19 +2208,19 @@ export const Int32Rules = {
 
   toJSON(message: Int32Rules): unknown {
     const obj: any = {};
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       obj.const = Math.round(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       obj.lt = Math.round(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       obj.lte = Math.round(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       obj.gt = Math.round(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       obj.gte = Math.round(message.gte);
     }
     if (message.in?.length) {
@@ -2039,7 +2229,7 @@ export const Int32Rules = {
     if (message.not_in?.length) {
       obj.not_in = message.not_in.map((e) => Math.round(e));
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       obj.ignore_empty = message.ignore_empty;
     }
     return obj;
@@ -2068,19 +2258,19 @@ function createBaseInt64Rules(): Int64Rules {
 
 export const Int64Rules = {
   encode(message: Int64Rules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       writer.uint32(8).int64(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       writer.uint32(16).int64(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       writer.uint32(24).int64(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       writer.uint32(32).int64(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       writer.uint32(40).int64(message.gte);
     }
     writer.uint32(50).fork();
@@ -2093,7 +2283,7 @@ export const Int64Rules = {
       writer.int64(v);
     }
     writer.ldelim();
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       writer.uint32(64).bool(message.ignore_empty);
     }
     return writer;
@@ -2206,19 +2396,19 @@ export const Int64Rules = {
 
   toJSON(message: Int64Rules): unknown {
     const obj: any = {};
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       obj.const = Math.round(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       obj.lt = Math.round(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       obj.lte = Math.round(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       obj.gt = Math.round(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       obj.gte = Math.round(message.gte);
     }
     if (message.in?.length) {
@@ -2227,7 +2417,7 @@ export const Int64Rules = {
     if (message.not_in?.length) {
       obj.not_in = message.not_in.map((e) => Math.round(e));
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       obj.ignore_empty = message.ignore_empty;
     }
     return obj;
@@ -2256,19 +2446,19 @@ function createBaseUInt32Rules(): UInt32Rules {
 
 export const UInt32Rules = {
   encode(message: UInt32Rules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       writer.uint32(8).uint32(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       writer.uint32(16).uint32(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       writer.uint32(24).uint32(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       writer.uint32(32).uint32(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       writer.uint32(40).uint32(message.gte);
     }
     writer.uint32(50).fork();
@@ -2281,7 +2471,7 @@ export const UInt32Rules = {
       writer.uint32(v);
     }
     writer.ldelim();
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       writer.uint32(64).bool(message.ignore_empty);
     }
     return writer;
@@ -2394,19 +2584,19 @@ export const UInt32Rules = {
 
   toJSON(message: UInt32Rules): unknown {
     const obj: any = {};
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       obj.const = Math.round(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       obj.lt = Math.round(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       obj.lte = Math.round(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       obj.gt = Math.round(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       obj.gte = Math.round(message.gte);
     }
     if (message.in?.length) {
@@ -2415,7 +2605,7 @@ export const UInt32Rules = {
     if (message.not_in?.length) {
       obj.not_in = message.not_in.map((e) => Math.round(e));
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       obj.ignore_empty = message.ignore_empty;
     }
     return obj;
@@ -2444,19 +2634,19 @@ function createBaseUInt64Rules(): UInt64Rules {
 
 export const UInt64Rules = {
   encode(message: UInt64Rules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       writer.uint32(8).uint64(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       writer.uint32(16).uint64(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       writer.uint32(24).uint64(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       writer.uint32(32).uint64(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       writer.uint32(40).uint64(message.gte);
     }
     writer.uint32(50).fork();
@@ -2469,7 +2659,7 @@ export const UInt64Rules = {
       writer.uint64(v);
     }
     writer.ldelim();
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       writer.uint32(64).bool(message.ignore_empty);
     }
     return writer;
@@ -2582,19 +2772,19 @@ export const UInt64Rules = {
 
   toJSON(message: UInt64Rules): unknown {
     const obj: any = {};
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       obj.const = Math.round(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       obj.lt = Math.round(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       obj.lte = Math.round(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       obj.gt = Math.round(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       obj.gte = Math.round(message.gte);
     }
     if (message.in?.length) {
@@ -2603,7 +2793,7 @@ export const UInt64Rules = {
     if (message.not_in?.length) {
       obj.not_in = message.not_in.map((e) => Math.round(e));
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       obj.ignore_empty = message.ignore_empty;
     }
     return obj;
@@ -2632,19 +2822,19 @@ function createBaseSInt32Rules(): SInt32Rules {
 
 export const SInt32Rules = {
   encode(message: SInt32Rules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       writer.uint32(8).sint32(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       writer.uint32(16).sint32(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       writer.uint32(24).sint32(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       writer.uint32(32).sint32(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       writer.uint32(40).sint32(message.gte);
     }
     writer.uint32(50).fork();
@@ -2657,7 +2847,7 @@ export const SInt32Rules = {
       writer.sint32(v);
     }
     writer.ldelim();
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       writer.uint32(64).bool(message.ignore_empty);
     }
     return writer;
@@ -2770,19 +2960,19 @@ export const SInt32Rules = {
 
   toJSON(message: SInt32Rules): unknown {
     const obj: any = {};
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       obj.const = Math.round(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       obj.lt = Math.round(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       obj.lte = Math.round(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       obj.gt = Math.round(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       obj.gte = Math.round(message.gte);
     }
     if (message.in?.length) {
@@ -2791,7 +2981,7 @@ export const SInt32Rules = {
     if (message.not_in?.length) {
       obj.not_in = message.not_in.map((e) => Math.round(e));
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       obj.ignore_empty = message.ignore_empty;
     }
     return obj;
@@ -2820,19 +3010,19 @@ function createBaseSInt64Rules(): SInt64Rules {
 
 export const SInt64Rules = {
   encode(message: SInt64Rules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       writer.uint32(8).sint64(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       writer.uint32(16).sint64(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       writer.uint32(24).sint64(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       writer.uint32(32).sint64(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       writer.uint32(40).sint64(message.gte);
     }
     writer.uint32(50).fork();
@@ -2845,7 +3035,7 @@ export const SInt64Rules = {
       writer.sint64(v);
     }
     writer.ldelim();
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       writer.uint32(64).bool(message.ignore_empty);
     }
     return writer;
@@ -2958,19 +3148,19 @@ export const SInt64Rules = {
 
   toJSON(message: SInt64Rules): unknown {
     const obj: any = {};
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       obj.const = Math.round(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       obj.lt = Math.round(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       obj.lte = Math.round(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       obj.gt = Math.round(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       obj.gte = Math.round(message.gte);
     }
     if (message.in?.length) {
@@ -2979,7 +3169,7 @@ export const SInt64Rules = {
     if (message.not_in?.length) {
       obj.not_in = message.not_in.map((e) => Math.round(e));
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       obj.ignore_empty = message.ignore_empty;
     }
     return obj;
@@ -3008,19 +3198,19 @@ function createBaseFixed32Rules(): Fixed32Rules {
 
 export const Fixed32Rules = {
   encode(message: Fixed32Rules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       writer.uint32(13).fixed32(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       writer.uint32(21).fixed32(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       writer.uint32(29).fixed32(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       writer.uint32(37).fixed32(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       writer.uint32(45).fixed32(message.gte);
     }
     writer.uint32(50).fork();
@@ -3033,7 +3223,7 @@ export const Fixed32Rules = {
       writer.fixed32(v);
     }
     writer.ldelim();
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       writer.uint32(64).bool(message.ignore_empty);
     }
     return writer;
@@ -3146,19 +3336,19 @@ export const Fixed32Rules = {
 
   toJSON(message: Fixed32Rules): unknown {
     const obj: any = {};
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       obj.const = Math.round(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       obj.lt = Math.round(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       obj.lte = Math.round(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       obj.gt = Math.round(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       obj.gte = Math.round(message.gte);
     }
     if (message.in?.length) {
@@ -3167,7 +3357,7 @@ export const Fixed32Rules = {
     if (message.not_in?.length) {
       obj.not_in = message.not_in.map((e) => Math.round(e));
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       obj.ignore_empty = message.ignore_empty;
     }
     return obj;
@@ -3196,19 +3386,19 @@ function createBaseFixed64Rules(): Fixed64Rules {
 
 export const Fixed64Rules = {
   encode(message: Fixed64Rules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       writer.uint32(9).fixed64(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       writer.uint32(17).fixed64(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       writer.uint32(25).fixed64(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       writer.uint32(33).fixed64(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       writer.uint32(41).fixed64(message.gte);
     }
     writer.uint32(50).fork();
@@ -3221,7 +3411,7 @@ export const Fixed64Rules = {
       writer.fixed64(v);
     }
     writer.ldelim();
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       writer.uint32(64).bool(message.ignore_empty);
     }
     return writer;
@@ -3334,19 +3524,19 @@ export const Fixed64Rules = {
 
   toJSON(message: Fixed64Rules): unknown {
     const obj: any = {};
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       obj.const = Math.round(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       obj.lt = Math.round(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       obj.lte = Math.round(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       obj.gt = Math.round(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       obj.gte = Math.round(message.gte);
     }
     if (message.in?.length) {
@@ -3355,7 +3545,7 @@ export const Fixed64Rules = {
     if (message.not_in?.length) {
       obj.not_in = message.not_in.map((e) => Math.round(e));
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       obj.ignore_empty = message.ignore_empty;
     }
     return obj;
@@ -3384,19 +3574,19 @@ function createBaseSFixed32Rules(): SFixed32Rules {
 
 export const SFixed32Rules = {
   encode(message: SFixed32Rules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       writer.uint32(13).sfixed32(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       writer.uint32(21).sfixed32(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       writer.uint32(29).sfixed32(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       writer.uint32(37).sfixed32(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       writer.uint32(45).sfixed32(message.gte);
     }
     writer.uint32(50).fork();
@@ -3409,7 +3599,7 @@ export const SFixed32Rules = {
       writer.sfixed32(v);
     }
     writer.ldelim();
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       writer.uint32(64).bool(message.ignore_empty);
     }
     return writer;
@@ -3522,19 +3712,19 @@ export const SFixed32Rules = {
 
   toJSON(message: SFixed32Rules): unknown {
     const obj: any = {};
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       obj.const = Math.round(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       obj.lt = Math.round(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       obj.lte = Math.round(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       obj.gt = Math.round(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       obj.gte = Math.round(message.gte);
     }
     if (message.in?.length) {
@@ -3543,7 +3733,7 @@ export const SFixed32Rules = {
     if (message.not_in?.length) {
       obj.not_in = message.not_in.map((e) => Math.round(e));
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       obj.ignore_empty = message.ignore_empty;
     }
     return obj;
@@ -3572,19 +3762,19 @@ function createBaseSFixed64Rules(): SFixed64Rules {
 
 export const SFixed64Rules = {
   encode(message: SFixed64Rules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       writer.uint32(9).sfixed64(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       writer.uint32(17).sfixed64(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       writer.uint32(25).sfixed64(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       writer.uint32(33).sfixed64(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       writer.uint32(41).sfixed64(message.gte);
     }
     writer.uint32(50).fork();
@@ -3597,7 +3787,7 @@ export const SFixed64Rules = {
       writer.sfixed64(v);
     }
     writer.ldelim();
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       writer.uint32(64).bool(message.ignore_empty);
     }
     return writer;
@@ -3710,19 +3900,19 @@ export const SFixed64Rules = {
 
   toJSON(message: SFixed64Rules): unknown {
     const obj: any = {};
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       obj.const = Math.round(message.const);
     }
-    if (message.lt !== 0) {
+    if (message.lt !== undefined && message.lt !== 0) {
       obj.lt = Math.round(message.lt);
     }
-    if (message.lte !== 0) {
+    if (message.lte !== undefined && message.lte !== 0) {
       obj.lte = Math.round(message.lte);
     }
-    if (message.gt !== 0) {
+    if (message.gt !== undefined && message.gt !== 0) {
       obj.gt = Math.round(message.gt);
     }
-    if (message.gte !== 0) {
+    if (message.gte !== undefined && message.gte !== 0) {
       obj.gte = Math.round(message.gte);
     }
     if (message.in?.length) {
@@ -3731,7 +3921,7 @@ export const SFixed64Rules = {
     if (message.not_in?.length) {
       obj.not_in = message.not_in.map((e) => Math.round(e));
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       obj.ignore_empty = message.ignore_empty;
     }
     return obj;
@@ -3760,7 +3950,7 @@ function createBaseBoolRules(): BoolRules {
 
 export const BoolRules = {
   encode(message: BoolRules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.const === true) {
+    if (message.const !== undefined && message.const !== false) {
       writer.uint32(8).bool(message.const);
     }
     return writer;
@@ -3795,7 +3985,7 @@ export const BoolRules = {
 
   toJSON(message: BoolRules): unknown {
     const obj: any = {};
-    if (message.const === true) {
+    if (message.const !== undefined && message.const !== false) {
       obj.const = message.const;
     }
     return obj;
@@ -3837,47 +4027,47 @@ function createBaseStringRules(): StringRules {
     address: undefined,
     uuid: undefined,
     well_known_regex: undefined,
-    strict: false,
+    strict: true,
     ignore_empty: false,
   };
 }
 
 export const StringRules = {
   encode(message: StringRules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.const !== "") {
+    if (message.const !== undefined && message.const !== "") {
       writer.uint32(10).string(message.const);
     }
-    if (message.len !== 0) {
+    if (message.len !== undefined && message.len !== 0) {
       writer.uint32(152).uint64(message.len);
     }
-    if (message.min_len !== 0) {
+    if (message.min_len !== undefined && message.min_len !== 0) {
       writer.uint32(16).uint64(message.min_len);
     }
-    if (message.max_len !== 0) {
+    if (message.max_len !== undefined && message.max_len !== 0) {
       writer.uint32(24).uint64(message.max_len);
     }
-    if (message.len_bytes !== 0) {
+    if (message.len_bytes !== undefined && message.len_bytes !== 0) {
       writer.uint32(160).uint64(message.len_bytes);
     }
-    if (message.min_bytes !== 0) {
+    if (message.min_bytes !== undefined && message.min_bytes !== 0) {
       writer.uint32(32).uint64(message.min_bytes);
     }
-    if (message.max_bytes !== 0) {
+    if (message.max_bytes !== undefined && message.max_bytes !== 0) {
       writer.uint32(40).uint64(message.max_bytes);
     }
-    if (message.pattern !== "") {
+    if (message.pattern !== undefined && message.pattern !== "") {
       writer.uint32(50).string(message.pattern);
     }
-    if (message.prefix !== "") {
+    if (message.prefix !== undefined && message.prefix !== "") {
       writer.uint32(58).string(message.prefix);
     }
-    if (message.suffix !== "") {
+    if (message.suffix !== undefined && message.suffix !== "") {
       writer.uint32(66).string(message.suffix);
     }
-    if (message.contains !== "") {
+    if (message.contains !== undefined && message.contains !== "") {
       writer.uint32(74).string(message.contains);
     }
-    if (message.not_contains !== "") {
+    if (message.not_contains !== undefined && message.not_contains !== "") {
       writer.uint32(186).string(message.not_contains);
     }
     for (const v of message.in) {
@@ -3916,10 +4106,10 @@ export const StringRules = {
     if (message.well_known_regex !== undefined) {
       writer.uint32(192).int32(message.well_known_regex);
     }
-    if (message.strict === true) {
+    if (message.strict !== undefined && message.strict !== true) {
       writer.uint32(200).bool(message.strict);
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       writer.uint32(208).bool(message.ignore_empty);
     }
     return writer;
@@ -4149,47 +4339,47 @@ export const StringRules = {
       address: isSet(object.address) ? globalThis.Boolean(object.address) : undefined,
       uuid: isSet(object.uuid) ? globalThis.Boolean(object.uuid) : undefined,
       well_known_regex: isSet(object.well_known_regex) ? knownRegexFromJSON(object.well_known_regex) : undefined,
-      strict: isSet(object.strict) ? globalThis.Boolean(object.strict) : false,
+      strict: isSet(object.strict) ? globalThis.Boolean(object.strict) : true,
       ignore_empty: isSet(object.ignore_empty) ? globalThis.Boolean(object.ignore_empty) : false,
     };
   },
 
   toJSON(message: StringRules): unknown {
     const obj: any = {};
-    if (message.const !== "") {
+    if (message.const !== undefined && message.const !== "") {
       obj.const = message.const;
     }
-    if (message.len !== 0) {
+    if (message.len !== undefined && message.len !== 0) {
       obj.len = Math.round(message.len);
     }
-    if (message.min_len !== 0) {
+    if (message.min_len !== undefined && message.min_len !== 0) {
       obj.min_len = Math.round(message.min_len);
     }
-    if (message.max_len !== 0) {
+    if (message.max_len !== undefined && message.max_len !== 0) {
       obj.max_len = Math.round(message.max_len);
     }
-    if (message.len_bytes !== 0) {
+    if (message.len_bytes !== undefined && message.len_bytes !== 0) {
       obj.len_bytes = Math.round(message.len_bytes);
     }
-    if (message.min_bytes !== 0) {
+    if (message.min_bytes !== undefined && message.min_bytes !== 0) {
       obj.min_bytes = Math.round(message.min_bytes);
     }
-    if (message.max_bytes !== 0) {
+    if (message.max_bytes !== undefined && message.max_bytes !== 0) {
       obj.max_bytes = Math.round(message.max_bytes);
     }
-    if (message.pattern !== "") {
+    if (message.pattern !== undefined && message.pattern !== "") {
       obj.pattern = message.pattern;
     }
-    if (message.prefix !== "") {
+    if (message.prefix !== undefined && message.prefix !== "") {
       obj.prefix = message.prefix;
     }
-    if (message.suffix !== "") {
+    if (message.suffix !== undefined && message.suffix !== "") {
       obj.suffix = message.suffix;
     }
-    if (message.contains !== "") {
+    if (message.contains !== undefined && message.contains !== "") {
       obj.contains = message.contains;
     }
-    if (message.not_contains !== "") {
+    if (message.not_contains !== undefined && message.not_contains !== "") {
       obj.not_contains = message.not_contains;
     }
     if (message.in?.length) {
@@ -4228,10 +4418,10 @@ export const StringRules = {
     if (message.well_known_regex !== undefined) {
       obj.well_known_regex = knownRegexToJSON(message.well_known_regex);
     }
-    if (message.strict === true) {
+    if (message.strict !== undefined && message.strict !== true) {
       obj.strict = message.strict;
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       obj.ignore_empty = message.ignore_empty;
     }
     return obj;
@@ -4266,7 +4456,7 @@ export const StringRules = {
     message.address = object.address ?? undefined;
     message.uuid = object.uuid ?? undefined;
     message.well_known_regex = object.well_known_regex ?? undefined;
-    message.strict = object.strict ?? false;
+    message.strict = object.strict ?? true;
     message.ignore_empty = object.ignore_empty ?? false;
     return message;
   },
@@ -4293,28 +4483,28 @@ function createBaseBytesRules(): BytesRules {
 
 export const BytesRules = {
   encode(message: BytesRules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.const.length !== 0) {
+    if (message.const !== undefined && message.const.length !== 0) {
       writer.uint32(10).bytes(message.const);
     }
-    if (message.len !== 0) {
+    if (message.len !== undefined && message.len !== 0) {
       writer.uint32(104).uint64(message.len);
     }
-    if (message.min_len !== 0) {
+    if (message.min_len !== undefined && message.min_len !== 0) {
       writer.uint32(16).uint64(message.min_len);
     }
-    if (message.max_len !== 0) {
+    if (message.max_len !== undefined && message.max_len !== 0) {
       writer.uint32(24).uint64(message.max_len);
     }
-    if (message.pattern !== "") {
+    if (message.pattern !== undefined && message.pattern !== "") {
       writer.uint32(34).string(message.pattern);
     }
-    if (message.prefix.length !== 0) {
+    if (message.prefix !== undefined && message.prefix.length !== 0) {
       writer.uint32(42).bytes(message.prefix);
     }
-    if (message.suffix.length !== 0) {
+    if (message.suffix !== undefined && message.suffix.length !== 0) {
       writer.uint32(50).bytes(message.suffix);
     }
-    if (message.contains.length !== 0) {
+    if (message.contains !== undefined && message.contains.length !== 0) {
       writer.uint32(58).bytes(message.contains);
     }
     for (const v of message.in) {
@@ -4332,7 +4522,7 @@ export const BytesRules = {
     if (message.ipv6 !== undefined) {
       writer.uint32(96).bool(message.ipv6);
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       writer.uint32(112).bool(message.ignore_empty);
     }
     return writer;
@@ -4473,28 +4663,28 @@ export const BytesRules = {
 
   toJSON(message: BytesRules): unknown {
     const obj: any = {};
-    if (message.const.length !== 0) {
+    if (message.const !== undefined && message.const.length !== 0) {
       obj.const = base64FromBytes(message.const);
     }
-    if (message.len !== 0) {
+    if (message.len !== undefined && message.len !== 0) {
       obj.len = Math.round(message.len);
     }
-    if (message.min_len !== 0) {
+    if (message.min_len !== undefined && message.min_len !== 0) {
       obj.min_len = Math.round(message.min_len);
     }
-    if (message.max_len !== 0) {
+    if (message.max_len !== undefined && message.max_len !== 0) {
       obj.max_len = Math.round(message.max_len);
     }
-    if (message.pattern !== "") {
+    if (message.pattern !== undefined && message.pattern !== "") {
       obj.pattern = message.pattern;
     }
-    if (message.prefix.length !== 0) {
+    if (message.prefix !== undefined && message.prefix.length !== 0) {
       obj.prefix = base64FromBytes(message.prefix);
     }
-    if (message.suffix.length !== 0) {
+    if (message.suffix !== undefined && message.suffix.length !== 0) {
       obj.suffix = base64FromBytes(message.suffix);
     }
-    if (message.contains.length !== 0) {
+    if (message.contains !== undefined && message.contains.length !== 0) {
       obj.contains = base64FromBytes(message.contains);
     }
     if (message.in?.length) {
@@ -4512,7 +4702,7 @@ export const BytesRules = {
     if (message.ipv6 !== undefined) {
       obj.ipv6 = message.ipv6;
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       obj.ignore_empty = message.ignore_empty;
     }
     return obj;
@@ -4547,10 +4737,10 @@ function createBaseEnumRules(): EnumRules {
 
 export const EnumRules = {
   encode(message: EnumRules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       writer.uint32(8).int32(message.const);
     }
-    if (message.defined_only === true) {
+    if (message.defined_only !== undefined && message.defined_only !== false) {
       writer.uint32(16).bool(message.defined_only);
     }
     writer.uint32(26).fork();
@@ -4641,10 +4831,10 @@ export const EnumRules = {
 
   toJSON(message: EnumRules): unknown {
     const obj: any = {};
-    if (message.const !== 0) {
+    if (message.const !== undefined && message.const !== 0) {
       obj.const = Math.round(message.const);
     }
-    if (message.defined_only === true) {
+    if (message.defined_only !== undefined && message.defined_only !== false) {
       obj.defined_only = message.defined_only;
     }
     if (message.in?.length) {
@@ -4675,10 +4865,10 @@ function createBaseMessageRules(): MessageRules {
 
 export const MessageRules = {
   encode(message: MessageRules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.skip === true) {
+    if (message.skip !== undefined && message.skip !== false) {
       writer.uint32(8).bool(message.skip);
     }
-    if (message.required === true) {
+    if (message.required !== undefined && message.required !== false) {
       writer.uint32(16).bool(message.required);
     }
     return writer;
@@ -4723,10 +4913,10 @@ export const MessageRules = {
 
   toJSON(message: MessageRules): unknown {
     const obj: any = {};
-    if (message.skip === true) {
+    if (message.skip !== undefined && message.skip !== false) {
       obj.skip = message.skip;
     }
-    if (message.required === true) {
+    if (message.required !== undefined && message.required !== false) {
       obj.required = message.required;
     }
     return obj;
@@ -4749,19 +4939,19 @@ function createBaseRepeatedRules(): RepeatedRules {
 
 export const RepeatedRules = {
   encode(message: RepeatedRules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.min_items !== 0) {
+    if (message.min_items !== undefined && message.min_items !== 0) {
       writer.uint32(8).uint64(message.min_items);
     }
-    if (message.max_items !== 0) {
+    if (message.max_items !== undefined && message.max_items !== 0) {
       writer.uint32(16).uint64(message.max_items);
     }
-    if (message.unique === true) {
+    if (message.unique !== undefined && message.unique !== false) {
       writer.uint32(24).bool(message.unique);
     }
     if (message.items !== undefined) {
       FieldRules.encode(message.items, writer.uint32(34).fork()).ldelim();
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       writer.uint32(40).bool(message.ignore_empty);
     }
     return writer;
@@ -4830,19 +5020,19 @@ export const RepeatedRules = {
 
   toJSON(message: RepeatedRules): unknown {
     const obj: any = {};
-    if (message.min_items !== 0) {
+    if (message.min_items !== undefined && message.min_items !== 0) {
       obj.min_items = Math.round(message.min_items);
     }
-    if (message.max_items !== 0) {
+    if (message.max_items !== undefined && message.max_items !== 0) {
       obj.max_items = Math.round(message.max_items);
     }
-    if (message.unique === true) {
+    if (message.unique !== undefined && message.unique !== false) {
       obj.unique = message.unique;
     }
     if (message.items !== undefined) {
       obj.items = FieldRules.toJSON(message.items);
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       obj.ignore_empty = message.ignore_empty;
     }
     return obj;
@@ -4870,13 +5060,13 @@ function createBaseMapRules(): MapRules {
 
 export const MapRules = {
   encode(message: MapRules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.min_pairs !== 0) {
+    if (message.min_pairs !== undefined && message.min_pairs !== 0) {
       writer.uint32(8).uint64(message.min_pairs);
     }
-    if (message.max_pairs !== 0) {
+    if (message.max_pairs !== undefined && message.max_pairs !== 0) {
       writer.uint32(16).uint64(message.max_pairs);
     }
-    if (message.no_sparse === true) {
+    if (message.no_sparse !== undefined && message.no_sparse !== false) {
       writer.uint32(24).bool(message.no_sparse);
     }
     if (message.keys !== undefined) {
@@ -4885,7 +5075,7 @@ export const MapRules = {
     if (message.values !== undefined) {
       FieldRules.encode(message.values, writer.uint32(42).fork()).ldelim();
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       writer.uint32(48).bool(message.ignore_empty);
     }
     return writer;
@@ -4962,13 +5152,13 @@ export const MapRules = {
 
   toJSON(message: MapRules): unknown {
     const obj: any = {};
-    if (message.min_pairs !== 0) {
+    if (message.min_pairs !== undefined && message.min_pairs !== 0) {
       obj.min_pairs = Math.round(message.min_pairs);
     }
-    if (message.max_pairs !== 0) {
+    if (message.max_pairs !== undefined && message.max_pairs !== 0) {
       obj.max_pairs = Math.round(message.max_pairs);
     }
-    if (message.no_sparse === true) {
+    if (message.no_sparse !== undefined && message.no_sparse !== false) {
       obj.no_sparse = message.no_sparse;
     }
     if (message.keys !== undefined) {
@@ -4977,7 +5167,7 @@ export const MapRules = {
     if (message.values !== undefined) {
       obj.values = FieldRules.toJSON(message.values);
     }
-    if (message.ignore_empty === true) {
+    if (message.ignore_empty !== undefined && message.ignore_empty !== false) {
       obj.ignore_empty = message.ignore_empty;
     }
     return obj;
@@ -5008,7 +5198,7 @@ function createBaseAnyRules(): AnyRules {
 
 export const AnyRules = {
   encode(message: AnyRules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.required === true) {
+    if (message.required !== undefined && message.required !== false) {
       writer.uint32(8).bool(message.required);
     }
     for (const v of message.in) {
@@ -5067,7 +5257,7 @@ export const AnyRules = {
 
   toJSON(message: AnyRules): unknown {
     const obj: any = {};
-    if (message.required === true) {
+    if (message.required !== undefined && message.required !== false) {
       obj.required = message.required;
     }
     if (message.in?.length) {
@@ -5106,7 +5296,7 @@ function createBaseDurationRules(): DurationRules {
 
 export const DurationRules = {
   encode(message: DurationRules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.required === true) {
+    if (message.required !== undefined && message.required !== false) {
       writer.uint32(8).bool(message.required);
     }
     if (message.const !== undefined) {
@@ -5220,7 +5410,7 @@ export const DurationRules = {
 
   toJSON(message: DurationRules): unknown {
     const obj: any = {};
-    if (message.required === true) {
+    if (message.required !== undefined && message.required !== false) {
       obj.required = message.required;
     }
     if (message.const !== undefined) {
@@ -5282,7 +5472,7 @@ function createBaseTimestampRules(): TimestampRules {
 
 export const TimestampRules = {
   encode(message: TimestampRules, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
-    if (message.required === true) {
+    if (message.required !== undefined && message.required !== false) {
       writer.uint32(8).bool(message.required);
     }
     if (message.const !== undefined) {
@@ -5300,10 +5490,10 @@ export const TimestampRules = {
     if (message.gte !== undefined) {
       Timestamp.encode(toTimestamp(message.gte), writer.uint32(50).fork()).ldelim();
     }
-    if (message.lt_now === true) {
+    if (message.lt_now !== undefined && message.lt_now !== false) {
       writer.uint32(56).bool(message.lt_now);
     }
-    if (message.gt_now === true) {
+    if (message.gt_now !== undefined && message.gt_now !== false) {
       writer.uint32(64).bool(message.gt_now);
     }
     if (message.within !== undefined) {
@@ -5407,7 +5597,7 @@ export const TimestampRules = {
 
   toJSON(message: TimestampRules): unknown {
     const obj: any = {};
-    if (message.required === true) {
+    if (message.required !== undefined && message.required !== false) {
       obj.required = message.required;
     }
     if (message.const !== undefined) {
@@ -5425,10 +5615,10 @@ export const TimestampRules = {
     if (message.gte !== undefined) {
       obj.gte = message.gte.toISOString();
     }
-    if (message.lt_now === true) {
+    if (message.lt_now !== undefined && message.lt_now !== false) {
       obj.lt_now = message.lt_now;
     }
-    if (message.gt_now === true) {
+    if (message.gt_now !== undefined && message.gt_now !== false) {
       obj.gt_now = message.gt_now;
     }
     if (message.within !== undefined) {
