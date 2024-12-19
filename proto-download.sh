@@ -2,8 +2,8 @@
 [ -z "$DEBUG" ] || set -x
 set -eo pipefail
 
-ENVOY_TAG=1.31.0
-VALIDATE_TAG=1.0.4
+ENVOY_TAG=1.32.3
+VALIDATE_TAG=1.1.0
 
 cd proto
 curl -L https://github.com/cncf/xds/archive/refs/heads/main.tar.gz | tar xvzf - --strip-components=1 xds-main/xds/core
